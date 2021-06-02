@@ -8,7 +8,9 @@ export default class OrderPage extends Component {
     constructor(){
         super();
         this.state={
-            list_orders:[]
+            list_orders:[],
+            status:"en attente"
+
         }
     }
     render() {
@@ -17,10 +19,21 @@ export default class OrderPage extends Component {
                <AdminTheme>
                    <Orders
                     list_orders={this.state. list_orders}
+                    change={this.change}
+                    status={this.state.status}
+                   
+                  
                    ></Orders>
                </AdminTheme>
             </div>
         )
+    }
+    change=(event)=>{
+        let value=event.target.value;
+        let name=event.target.name;
+        console.log(value)
+        this.setState({[name]:value})
+
     }
 
     componentDidMount() {
@@ -41,6 +54,7 @@ export default class OrderPage extends Component {
                 response.data[k].price,
                 response.data[k].quantity,
                 response.data[k].title,
+                response.data[k].status,
                
 
     

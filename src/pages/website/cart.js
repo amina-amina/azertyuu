@@ -10,7 +10,8 @@ export default class CartPage extends Component {
         super()
         this.state = {
             fullname:"",
-            phone:""
+            phone:"",
+            status:""
         }
     }
   render() {
@@ -63,7 +64,7 @@ export default class CartPage extends Component {
     // gadit les donner dyawli 
     let myOrders = this.context.list_order_data.map(o=>{
         delete o.id;//remove property id for order
-        return {...o,phone:this.state.phone,fullname:this.state.fullname}
+        return {...o,phone:this.state.phone,fullname:this.state.fullname,status:this.state.status}
     })
     
     //sifat les donnees dyali be axios (post)

@@ -32,11 +32,18 @@ export default function Orders(props) {
                                             <td>{o.quantity}</td>
                                             <td>{o.price}</td>
                                             <td>
-                                                <select classname="form-select w-50 mb-4 p-2 " aria-label="Default select example">
-                                                    <option selected> Select Status</option>
-                                                    <option value="{1}">One</option>
-                                                    <option value="{2}">Two</option>
-                                                    <option value="{3}">Three</option>
+                                                <select 
+                                                 onChange={props.change}
+                                                 
+                                                name="status"
+                                                classname="form-select w-50 mb-4 p-2 " aria-label="Default select example">
+                                                    <option
+                                                    
+                                                    selected></option>
+                                                    <option value={"en attente"} >completed</option>
+                                                    <option value={"processing"} >processing</option>
+                                                    <option value={"delivered"} >delivered</option>
+                                                    <option value={"canceled"}>canceled</option>
                                                 </select>
                                             </td>
                                             <td>{o.title}</td>
